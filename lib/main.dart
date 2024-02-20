@@ -4,10 +4,10 @@ import 'dart:math';
 // TODO: Allow custom positioning of the child widget (is only center at the moment)
 
 void main() {
-  runApp(MyApp());
+  runApp(ParallaxRainApp());
 }
 
-class MyApp extends StatelessWidget {
+class ParallaxRainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,24 +16,50 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Parallax Rain Demo'),
-        ),
         body: Stack(
           children: [
             ParallaxRain(),
             Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
+              top: 250,
+              left: 20,
+              // right: 0,
               child: Container(
-                height: 100,
-                color: Colors.white
-                    .withOpacity(0.5), // Semi-transparent white color
+                height: 500,
+                width: 100,
+                color:
+                    Colors.green.withOpacity(1), // Semi-transparent white color
                 child: Center(
                   child: Text(
                     'Your Container Content Here',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ), // Using your ParallaxRain widget here
+                ),
+              ),
+            ),
+            Positioned(
+              // top: 300,
+              // left: 60,
+              child: Center(
+                child: Container(
+                  // padding: EdgeInsets.only(top: 0),
+                  height: 100,
+                  width: 300,
+                  // alignment: Alignment,
+                  color: Colors.green
+                      .withOpacity(1), // Semi-transparent white color
+                  child: Center(
+                    child: Text(
+                      'YT Shirts',
+                      style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Roboto',
+                      ),
+                    ),
                   ), // Using your ParallaxRain widget here
                 ),
               ),
